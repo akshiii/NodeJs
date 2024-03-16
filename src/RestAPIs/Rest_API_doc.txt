@@ -1,0 +1,18 @@
+REST API - JSON
+
+GET /users - List of all users in html format
+GET /users/1 - Get user with id=1
+GET /users/2367 - Get user with id=2367
+
+/users/763 - Here id is a dynamic path parameter so we write it as /users/:id
+
+GET /api/users - This means to List of all users but in JSON form (case it says /api/users)
+GET /api/users/1 - Get user with id=1 but in JSON form
+
+POST /users - Create new user
+
+Patch means edit
+PATCH /users/1 - Edit new user with id = 1
+
+
+DELETE /users/1 - Delete user with id = 1
