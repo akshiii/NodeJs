@@ -1,2 +1,5 @@
 -> A function which runs on every request and response.
 -> It validates api requests before it reaches the api call.
+-> Can have multiple middlewares 
+
+Practrical use ->> Saving when and from where the requests are coming and saving it in a log file..
