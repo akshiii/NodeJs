@@ -1,8 +1,10 @@
 require("dotenv").config({ path: "../../.env" });
-const users = require("./MOCK_DATA.json");
+const users = require("../MOCK_DATA.json");
 const express = require("express");
 
 const app = express();
+
+app.use(express.urlencoded({ extended: false }));
 
 //Gives all users list and sends back data in JSON format,bcz it is /api/
 app.get("/api/users", (req, res) => {
@@ -19,9 +21,17 @@ app.get("/users", (req, res) => {
   res.send(html);
 });
 
-//Create new user
+//Create new user and send back status as 201(when something is created )
 app.post("/api/users", (req, res) => {
-  return res.json({ status: "pending" });
+  let body = req.body;
+  console.log(body.first_name);
+  if (!body.first_name || !body.last_name) {
+    //Sending back 400 and error detail if required data is not there..
+    return res
+      .status(400)
+      .json({ status: "wrong request, please send first_name and last_name" });
+  }
+  return res.status(201).json({ status: "done" });
 });
 
 //Common route for get/patch/delete
