@@ -1,6 +1,7 @@
 require("dotenv").config({ path: "../../.env" });
 const users = require("../MOCK_DATA.json");
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 
