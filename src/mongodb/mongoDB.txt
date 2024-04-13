@@ -12,3 +12,4 @@ COLLECTIONS - eg: "users", "blogs"
 Start mongodb in cmd line
 - mongosh
 - show dbs
+- use <db_name>
