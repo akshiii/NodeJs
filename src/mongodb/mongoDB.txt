@@ -13,3 +13,6 @@ Start mongodb in cmd line
 - mongosh
 - show dbs
 - use <db_name>
+- show collections
+- db.users.find({}) - Gives array of documnents
+- db.users.insert({}) 
