@@ -1,0 +1,14 @@
+MongoDB
+
+-No-Sql document based DB
+-Strong support for aggregation pipes
+-Works on BSON format
+-Best for Nodejs apps
+
+COLLECTIONS - eg: "users", "blogs"
+
+- Inside a collection we can have a no of documnents
+
+Start mongodb in cmd line
+- mongosh
+- show dbs
