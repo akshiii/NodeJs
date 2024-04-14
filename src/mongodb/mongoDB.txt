@@ -14,7 +14,7 @@ Start mongodb in cmd line
 - show dbs
 - use <db_name>
 - show collections
-- db.users.find({}) - Gives array of documnents
+- db.users.find({}) - Gives array of documents
 - db.users.insert({}) 
 
 We have Schema to define the structure. 
