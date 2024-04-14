@@ -68,6 +68,25 @@ app.get("/api/users", async (req, res) => {
   return res.json(allDBUsers);
 });
 
+app
+  .route("/api/users/:id")
+  .get(async (req, res) => {
+    console.log(" id = ", req.params.id);
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).json({ error: "user not found" });
+    return res.status(200).json(user);
+  })
+  .patch(async (req, res) => {
+    //Edit the user which has id = :id and send back data in json type
+    await User.findByIdAndUpdate(req.params.id, { firstName: "Changed" });
+    return res.json({ status: "success" });
+  })
+  .delete(async (req, res) => {
+    await User.findByIdAndDelete(req.params.id);
+    //Delete user with id = :id and send back data in json type(bcz it is /api/)
+    return res.json({ status: "success" });
+  });
+
 app.listen(process.env.PORT, () => {
   console.log("Server connected at ", process.env.PORT);
 });
